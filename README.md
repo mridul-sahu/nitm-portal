@@ -1,6 +1,6 @@
-# Ruby on Rails Tutorial: sample application
+# NITM Student's Portal
 
 This is the sample application for the
-[*Ruby on Rails Tutorial:
-Learn Web Development with Rails*](http://www.railstutorial.org/)
-by [Michael Hartl](http://www.michaelhartl.com/)
+[*NITM Student's Portal
+*](http://nitmeghalaya.in/nitm_web/index.php)
+by [Mridul Sahu]
