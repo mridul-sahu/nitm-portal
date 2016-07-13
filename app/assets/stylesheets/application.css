@@ -9,7 +9,13 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
+ *= require loop
+ *= stub custom
  *= require_tree .
  *= require_self
  */
+
+.move-content-down{
+    position: relative;
+    padding: 60px 100px 0 100px;
+}

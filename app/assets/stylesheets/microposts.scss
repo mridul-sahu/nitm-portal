@@ -1,3 +1,57 @@
 // Place all the styles related to the Microposts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/* microposts */
+
+
+$gray-darker:            lighten(#000, 13.5%) !default; // #222
+$gray-dark:              lighten(#000, 20%) !default;   // #333
+$gray:                   lighten(#000, 33.5%) !default; // #555
+$gray-light:             lighten(#000, 60%) !default;   // #999
+$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
+$gray-medium-light: #eaeaea;
+
+.microposts {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
