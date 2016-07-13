@@ -11,9 +11,4 @@ module ApplicationHelper
     base
   end
 
-  def content_down (title='')
-    base = ""
-    base = "#{base} move-content-down" unless title.empty? && !logged_in?
-    base
-  end
 end

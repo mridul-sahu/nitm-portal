@@ -9,7 +9,7 @@
   <%= render 'layouts/shim' %>
 
 </head>
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" style="<%= "padding-top: 60px" unless yield(:title).empty? && !logged_in? %>">
 <%= render 'layouts/header' %>
 <div class="container">
   <% flash.each do |message_type, message| %>
