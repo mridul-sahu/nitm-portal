@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  mount_uploader :picture, PictureUploader
+  mount_uploader :picture, ProfileUploader
   has_many :microposts, dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",
            foreign_key: "follower_id",
@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
             uniqueness: {case_sensitive: false}
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  validate  :picture_size
 
   class << self
     # Returns the hash digest of the given string.
@@ -97,6 +98,13 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  # Validates the size of an uploaded picture.
+  def picture_size
+    if picture.size > 10.megabytes
+      errors.add(:picture, "should be less than 10MB")
+    end
+  end
 
   # Converts email to all lower-case.
   def downcase_email

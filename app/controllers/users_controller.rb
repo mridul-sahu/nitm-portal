@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
-                                        :following, :followers]
-  before_action :correct_user,   only: [:edit, :update]
+                                        :following, :followers, :profile_picture]
+  before_action :correct_user,   only: [:edit, :update, :profile_picture]
   before_action :admin_user,     only: :destroy
 
   def index
@@ -61,6 +61,17 @@ class UsersController < ApplicationController
     @user  = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
+  end
+
+  def profile_picture
+    @user  = User.find(params[:id])
+    if @user.update_attributes(params.require(:user).permit(:picture))
+      flash[:success] = "Profile Picture updated"
+      redirect_to @user
+    else
+      flash[:danger] = "Could not update profile picture"
+      redirect_to @user
+    end
   end
 
   private

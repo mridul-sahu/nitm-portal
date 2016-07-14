@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :following, :followers
+      post :profile_picture
     end
   end
   resources :account_activations, only: [:edit]

@@ -94,3 +94,8 @@ aside {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+.image-upload > input
+{
+  display: none;
+}
