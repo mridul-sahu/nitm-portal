@@ -1,17 +1,33 @@
-<%= form_for(@user) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
+ <div class="custom-form-class">
+      <div class="wrapper">
+        <%= form_for( @user , :html => {:class => 'login'}) do |f| %>
 
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
+            <%= render 'shared/error_messages', object: f.object %>
 
-    <%= f.label :email %>
-    <%= f.email_field :email, class: 'form-control' %>
+            <p class="title"><%= yield(:title)%></p>
 
-    <%= f.label :password %>
-    <%= f.password_field :password, class: 'form-control' %>
+            <%= f.text_field :name, placeholder: 'Name' %>
+            <i class="fa"></i>
 
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, class: 'form-control' %>
+            <%= f.email_field :email, placeholder: 'Username'%>
 
-    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
-<% end %>
+            <i class="fa fa-user"></i>
+
+            <%= f.password_field :password, placeholder: 'Password'%>
+
+            <i class="fa fa-key"></i>
+
+            <%= f.password_field :password_confirmation, placeholder: 'Conform Password' %>
+            <i class="fa fa-key"></i>
+
+
+            <button>
+
+              <i class="spinner"></i>
+
+              <span class="state"><%= yield(:button_text)%></span>
+
+            </button>
+        <% end %>
+      </div>
+    </div>
