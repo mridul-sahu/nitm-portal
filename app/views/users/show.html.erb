@@ -3,7 +3,13 @@
   <aside class="col-md-4">
     <section>
       <h1>
-        <%= render 'shared/profilepic' %>
+        <%=
+          if current_user?(@user)
+            render 'shared/profilepic'
+          else
+            gravatar_for @user
+          end
+        %>
         <%= @user.name %>
       </h1>
     </section>
