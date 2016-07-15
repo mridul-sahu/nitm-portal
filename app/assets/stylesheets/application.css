@@ -15,7 +15,6 @@
  *= require_self
  */
 
-.move-content-down{
-    position: relative;
-    padding: 60px 100px 0 100px;
+.nav .dropdown-menu li a:hover{
+    color: #1d9b6c;
 }
