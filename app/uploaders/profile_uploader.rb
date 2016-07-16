@@ -6,7 +6,7 @@ class ProfileUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
   include CarrierWave::MiniMagick
-  process resize_to_limit: [120, 120]
+  process resize_to_fill: [170, 170]
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
     storage :fog

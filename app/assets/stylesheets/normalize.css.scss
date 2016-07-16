@@ -1,13 +1,4 @@
 .custom-form-class {
-
-
-  body {
-    font-family: "Open Sans", sans-serif;
-    height: 100vh;
-
-    background: url("#") 50% fixed;
-    background-size: cover;
-  }
   @keyframes spinner {
     0% {
       transform: rotateZ(0deg);
@@ -33,13 +24,14 @@
 
   .login {
     border-radius: 2px 2px 5px 5px;
+    border: 1px solid #555555;
     padding: 10px 20px 20px 20px;
     width: 90%;
     max-width: 400px;
     background: #fff;
     position: relative;
     padding-bottom: 80px;
-    box-shadow: px 10px 5px rgba(0, 0, 0, 0.3);
+    box-shadow:  10px 5px rgba(0, 0, 0, 0.3);
   }
   .login.loading button {
     max-height: 100%;
@@ -68,7 +60,7 @@
     border: 1px solid #ddd;
     transition: border-width 0.2s ease;
     border-radius: 2px;
-    color: #ccc;
+    color: #5e5e5e;
   }
   .login input + i.fa {
     color: #fff;

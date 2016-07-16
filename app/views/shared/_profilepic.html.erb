@@ -1,7 +1,7 @@
 <%= form_for( @user, :url => profile_picture_user_path( @user ), :html => { :method => :post, multipart: true } ) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="image-upload">
-    <%= f.label :picture, (gravatar_for @user).html_safe %>
+    <%= f.label :picture, (gravatar_for @user).html_safe, class: "pointer" %>
     <%= f.file_field :picture, accept: 'image/jpeg,image/png' %>
     </div>
 <% end %>

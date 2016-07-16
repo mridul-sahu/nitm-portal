@@ -1,6 +1,6 @@
 <% provide(:title, "Forgot password") %>
+<div id="wrap">
 <br><br><br>
-
 <div class="custom-form-class">
   <div class="wrapper">
     <%= form_for( :password_reset, url: password_resets_path , :html => {:class => 'login'}) do |f| %>
@@ -21,4 +21,5 @@
 
     <% end %>
   </div>
+</div>
 </div>

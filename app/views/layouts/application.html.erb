@@ -3,13 +3,16 @@
 <head>
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= if yield(:title).empty? && !logged_in?
+   stylesheet_link_tag    'home', media: 'all', 'data-turbolinks-track' => true
+   end %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
   <%= render 'layouts/shim' %>
 
 </head>
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" style="<%= "padding-top: 60px" unless yield(:title).empty? && !logged_in? %>">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" style="<%= "padding-top: 60px; background-color: #f5f8fa;" unless yield(:title).empty? && !logged_in? %>">
 <%= render 'layouts/header' %>
 <div class="container">
   <% flash.each do |message_type, message| %>
@@ -18,9 +21,7 @@
 </div>
   <%= yield %>
 <div class="container">
-  <%= render 'layouts/footer' %>
-  <%= debug(params) if Rails.env.development? %>
+<%= render 'layouts/footer' %>
 </div>
-
 </body>
 </html>

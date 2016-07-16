@@ -1,8 +1,9 @@
 <% if logged_in? %>
+    <div id="wrap" class="container1">
     <div class="row">
       <aside class="col-md-4">
         <section class="user_info">
-          <%= link_to gravatar_for(current_user, "120"), current_user %>
+          <%= link_to gravatar_for(current_user), current_user %>
           <h1><%= current_user.name %></h1>
           <span><%= link_to "view my profile", current_user %></span>
           <span><%= pluralize(current_user.microposts.count, "micropost") %></span>
@@ -13,19 +14,11 @@
         <section class="stats">
           <%= render 'shared/stats' %>
         </section>
-        <div class="form-group input-group">
-          <input type="text" class="form-control" placeholder="Search..">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-              <span class="glyphicon glyphicon-search"></span>
-            </button>
-          </span>
-        </div>
       </aside>
-      <div class="col-md-8">
-        <h3>Micropost Feed</h3>
+      <div class="col-md-6">
         <%= render 'shared/feed' %>
       </div>
+    </div>
     </div>
 <% else %>
     <!-- Intro Header -->
