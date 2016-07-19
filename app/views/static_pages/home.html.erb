@@ -1,24 +1,24 @@
 <% if logged_in? %>
     <div id="wrap" class="container1">
-    <div class="row">
-      <aside class="col-md-4">
-        <section class="user_info">
-          <%= link_to gravatar_for(current_user), current_user %>
-          <h1><%= current_user.name %></h1>
-          <span><%= link_to "view my profile", current_user %></span>
-          <span><%= pluralize(current_user.microposts.count, "micropost") %></span>
-        </section>
-        <section class="micropost_form">
-          <%= render 'shared/micropost_form' %>
-        </section>
-        <section class="stats">
-          <%= render 'shared/stats' %>
-        </section>
-      </aside>
-      <div class="col-md-6">
-        <%= render 'shared/feed' %>
+      <div class="row">
+        <div class="col-md-4">
+          <aside>
+            <section class="user_info">
+              <%= gravatar_for current_user ,"170","img-thumbnail"%>
+              <h1><%= link_to current_user.name , current_user %></h1>
+              <%= render 'shared/stats' %>
+              <span><%= pluralize(current_user.microposts.count, "micropost") %></span>
+            </section>
+
+            <section class="micropost_form">
+              <%= render 'shared/micropost_form' %>
+            </section>
+          </aside>
+        </div>
+        <div class="col-md-6">
+          <%= render 'shared/feed' %>
+        </div>
       </div>
-    </div>
     </div>
 <% else %>
     <!-- Intro Header -->

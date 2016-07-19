@@ -12,6 +12,20 @@
     box-sizing: border-box;
   }
 
+  .checkbox {
+    margin-bottom: 10px;
+    span {
+      margin-left: 20px;
+      font-weight: normal;
+      color: #777777;
+    }
+  }
+
+  #session_remember_me {
+    width: auto;
+    margin-left: 0;
+  }
+
   .wrapper {
     display: flex;
     align-items: center;
@@ -138,7 +152,4 @@
     border-bottom-width: 4px;
   }
 
-  .checkbox-inline > span {
-    color: #777777;
-  }
 }

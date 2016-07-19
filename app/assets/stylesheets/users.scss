@@ -11,16 +11,24 @@ $gray-lighter:           lighten(#000, 93.5%) !default; // #eee
 $gray-medium-light: #eaeaea;
 
 aside {
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 0;
+  border: 1px solid $gray-lighter;
+  border-radius: 10px;
   section.user_info {
-    margin-top: 20px;
+    padding-top: 5px;
+    margin-top: 5px;
+    min-height: 180px;
+    span{
+      margin-top: 15px;
+      font-weight: 300;
+      color: #1b6d85;
+    }
   }
   section {
-    padding: 10px 0;
-    margin-top: 20px;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
+    padding: 10px 10px;
+
     span {
       display: block;
       margin-bottom: 3px;
@@ -30,8 +38,8 @@ aside {
       font-size: 1.4em;
       text-align: left;
       letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
+      margin-bottom: 15px;
+      margin-top: 3px;
     }
   }
 }
@@ -46,6 +54,16 @@ aside {
 .stats {
   overflow: auto;
   margin-top: 0;
+  a {
+    float: left;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+  }
+}
+
+.stats1{
+  overflow: auto;
+  margin-top: 0;
   padding: 0;
   a {
     float: left;
@@ -57,8 +75,8 @@ aside {
       border: 0;
     }
     &:hover {
-      text-decoration: none;
-      color: blue;
+     text-decoration: none;
+      color: #1b6d85;
     }
   }
   strong {
@@ -110,6 +128,16 @@ aside {
   }
 }
 
+.edit_relationship, .new_relationship{
+  width: 150px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.edit_user{
+  float: left;
+}
+
 /* Users index */
 
 .users {
@@ -127,36 +155,6 @@ aside {
   display: none;
 }
 
-.mdl-card{
-  overflow: hidden;
-}
-
-// Card styles
-
-.mdl-card--horizontal {
-  flex-direction: column;
-  height: 1vh; /* 1 */
-  padding-left: 170px;
-  width: 100%;
-
-  h1 {
-    font-size: 1.4em;
-    text-align: left;
-    letter-spacing: -1px;
-
-  }
-
-  .mdl-card__media {
-    left: 0;
-    position: absolute;
-    width: 170px;
-  }
-
-  .mdl-card__supporting-text {
-    flex: 1 1 auto;
-    width: auto;
-  }
-}
 
 .index{
   width:100%;

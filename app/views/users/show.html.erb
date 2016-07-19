@@ -1,28 +1,21 @@
 <% provide(:title, @user.name) %>
 <div id="wrap" class="container1">
-<div class="row mdl-card">
+<div class="row">
   <div class="col-md-4">
-    <div class="mdl-shadow--2dp mdl-card--horizontal">
-      <div class="mdl-card__media">
+    <aside>
+      <section class="user_info">
         <%=
           if current_user?(@user)
             render 'shared/profilepic'
           else
-            gravatar_for @user
+            gravatar_for @user, "170", "img-thumbnail"
           end
         %>
-      </div>
-      <div class="mdl-card__title">
-        <h1 class="mdl-card__title-text"><%= @user.name %></h1>
-      </div>
-      <div class="mdl-card__supporting-text stats">
+        <h1><%= link_to @user.name , @user %></h1>
         <%= render 'shared/stats' %>
-      </div>
-      <div class="mdl-card__actions mdl-card--border">
         <%= render 'follow_form' if logged_in? %>
-      </div>
-    </div>
-
+      </section>
+    </aside>
   </div>
   <div class="col-md-6">
     <% if @user.microposts.any? %>
