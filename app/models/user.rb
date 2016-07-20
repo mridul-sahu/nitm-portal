@@ -33,6 +33,10 @@ class User < ActiveRecord::Base
     def new_token
       SecureRandom.urlsafe_base64
     end
+
+    def search(search)
+      where("name LIKE ?", "%#{search}%")
+    end
   end
 
   # Remembers a user in the database for use in persistent sessions.
