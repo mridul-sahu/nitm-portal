@@ -1,11 +1,14 @@
 <%= form_for(@micropost, html: { multipart: true }) do |f| %>
     <div class="field">
-      <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+      <%= f.text_area :content, placeholder: "What's new?", onkeyup: "textCounter(this,'counter',300); textAreaAdjust(this);"%>
+      <input disabled value="300" id="counter">
     </div>
-    <%= f.submit "Post", class: "btn btn-primary" %>
-    <span class="picture">
-    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+    <%= f.submit "Post", class: "btn btn-primary pull-right" %>
+    <span class="picture pull-left">
+      <%= f.label :picture, '<i class="fa fa-camera fa-2x" aria-hidden="true" title="Upload Image"></i><span class="sr-only">Upload Image</span>'.html_safe,class: "pointer"%>
+      <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', onchange: "readURL(this);" %>
   </span>
+    <img id="image"/>
 <% end %>
 
 <script type="text/javascript">
@@ -15,4 +18,49 @@
       alert('Maximum file size is 10MB. Please choose a smaller file.');
     }
   });
+
+  function textCounter(field,field2,maxlimit)
+  {
+    var countfield = document.getElementById(field2);
+    if ( field.value.length > maxlimit ) {
+      field.value = field.value.substring( 0, maxlimit );
+      return false;
+    } else {
+      countfield.value = maxlimit - field.value.length;
+    }
+  }
+  function textAreaAdjust(o) {
+    o.style.height = "77px";
+    o.style.height = (25+o.scrollHeight)+"px";
+  }
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#image')
+            .attr('src', e.target.result)
+            .width(120)
+            .height(120)
+            .addClass("img-rounded");
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  $(document).ready(function() {
+    $('input[type="submit"]').attr('disabled', true);
+    $('#micropost_content').on('keyup',function() {
+      var text_value = $('#micropost_content').val();
+      if($.trim(text_value) != '') {
+        $('input[type="submit"]').attr('disabled' , false);
+      }else{
+        $('input[type="submit"]').attr('disabled' , true);
+      }
+    });
+
+  });
+
 </script>
