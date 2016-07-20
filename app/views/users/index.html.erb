@@ -1,20 +1,37 @@
 <% provide(:title, 'All users') %>
 <div class="container">
-<div id="wrap">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="index">
-<h1>All users</h1>
+  <div id="wrap">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="index">
+          <h1>Users</h1>
 
-<%= will_paginate %>
+          <%= will_paginate %>
 
-<ul class="users">
-  <%= render @users %>
-</ul>
+          <%= form_tag(users_path, :method => "get", id: "search-form") do %>
+              <div id="imaginary_container">
+                <div class="input-group stylish-input-group">
+                  <%= text_field_tag :search, params[:search], placeholder: "Search Users",class: "form-control" %>
+                  <span class="input-group-addon">
+                    <button type="submit">
+                      <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                  </span>
+                </div>
+              </div>
+          <% end %>
 
-<%= will_paginate %>
-</div>
-</div>
-</div>
-</div>
+          <% if @users.present? %>
+              <ul class="users">
+                <%= render @users %>
+              </ul>
+          <% else %>
+              <p>There are no Users containing the term <%= params[:search] %>.</p>
+          <% end %>
+
+          <%= will_paginate %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
