@@ -6,7 +6,7 @@ User.create!(name:  "Mridul Sahu",
              activated: true,
              activated_at: Time.zone.now)
 
-if Rails.env.production?
+unless Rails.env.production?
 
   99.times do |n|
     name  = Faker::Name.name
