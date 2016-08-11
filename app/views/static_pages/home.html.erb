@@ -9,6 +9,11 @@
               <%= render 'shared/stats' %>
               <span><%= pluralize(current_user.microposts.count, "micropost") %></span>
             </section>
+            <section class="notices">
+              <hr/>
+              <a href="http://nitmnotices.blogspot.in" target="_blank" class="btn btn-default btn-block"><i class="fa fa-newspaper-o fa-fw"></i> <span class="network-name" style="font-size:large;">Notices</span></a>
+              <a href="http://nitmplacements.blogspot.in" target="_blank" class="btn btn-default btn-block"><i class="fa fa-users fa-fw"></i> <span class="network-name" style="font-size:large;">Placements</span></a>
+            </section>
           </aside>
         </div>
         <div class="col-md-6">
@@ -68,22 +73,20 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
+    <section id="news" class="container content-section text-center">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
-          <h2>Contact Us</h2>
-          <p>Feel free to email us to provide some feedback, give us suggestions, ask for help, or to just say hello!</p>
-          <p><a href="mailto:mridulsahu01@gmail.com"> feedback/help </a>
-          </p>
+          <h2>News</h2>
+          <p>All informational notices and placement information now together!</p>
           <ul class="list-inline banner-social-buttons">
             <li>
-              <a href="https://www.facebook.com/groups/nitmeghalaya/" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+              <a href="https://www.facebook.com/groups/nitmeghalaya/" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
             </li>
             <li>
-              <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+              <a href="http://nitmnotices.blogspot.in" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-newspaper-o fa-fw"></i> <span class="network-name">Notices</span></a>
             </li>
             <li>
-              <a href="#" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+              <a href="http://nitmplacements.blogspot.in" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-users fa-fw"></i> <span class="network-name">Placements</span></a>
             </li>
           </ul>
         </div>
